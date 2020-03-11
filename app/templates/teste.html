@@ -1,0 +1,29 @@
+{% extends "base_r.html" %}
+
+{% block content %}
+<div id="anuncio">
+    <h2>Bem vindo(a), {{ user.username }}!!!</h2></br>
+    <p>Esta página foi desenvolvida para disseminar o conhecimento sobre aurebesh, aqui você encontrará um tradutor para Aurebesh e uma seção com um pouco mais sobre e um método de aprendizagem para que possa escrever por conta própria em Aurebesh. Divirta-se!!</p>
+</div>
+        <p>Aqui estão suas informações:</p>
+
+        {% for dado in info %}
+        <div id="card">
+            <span class="titulo">{{dado.titulo}}</span>
+                <blockquote>
+                  <ul>
+                    <li><b>Login: </b>{{ dado.login}}</li>
+                    <li><b>Senha: </b>{{dado.senha}}</li>
+                  </ul>
+
+                </blockquote>
+
+
+        </div>
+        <hr>
+        {% endfor %}
+
+
+
+
+{% endblock %}

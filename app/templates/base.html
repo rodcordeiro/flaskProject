@@ -1,0 +1,45 @@
+<html>
+    <head>
+      {% if title %}
+      <title>Welcome to {{ title }}</title>
+      {% else %}
+      <title>Welcome to Microblog</title>
+      {% endif %}
+      <style media="screen">
+        *{
+          margin:0;
+          font-family:sans-serif;
+        }
+        nav{
+          padding: 5px;
+        }
+        nav ul{
+          list-style:none;
+
+        }
+        nav ul li{
+          display:inline;
+        }
+      </style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a href="/index"><li>Home</li></a>
+          <a href="/login">Login</a>
+          <a href="/teste"><li>Testes</li></a>
+        </ul>
+      </nav>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+       <ul>
+           {% for message in messages %}
+           <li>{{ message }}</li>
+           {% endfor %}
+       </ul>
+       {% endif %}
+       {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
